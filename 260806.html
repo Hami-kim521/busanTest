@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>flex layout</title>
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+
+            ul, li {
+                list-style: none;
+            }
+
+            a {
+                text-decoration: none;
+                color: black;
+            }
+
+            header, section, footer {
+                width: 100%;
+                background-color: lightgrey;
+            }
+
+            header {
+                height: 80px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            #in_header {
+                width: 1200px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            #logo {
+                width: 150px;
+                height: 50px;
+                background-color: yellowgreen;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+
+            #menu_wrap {
+                display: flex;
+                align-items: center;
+            }
+
+            .menu {
+                width: 100px;
+                height: 50px;
+                background-color: dimgray;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .menu a {
+                color: white;
+            }
+
+            #sec1 {
+                height: 300px;
+                background-color: slategrey;
+                display: flex;
+                justify-content: center;
+                margin-top: 30px;
+            }
+
+            #sec1_con {
+                width: 1200px;
+                height: 100%;
+                background-color: violet;
+            }
+
+            #sec2 {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background-color: lightgrey;
+                margin-top: 30px;
+            }
+
+            .container {
+                width: 1200px;
+                height: 100px;
+                background-color: royalblue;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .box {
+                width: 100%;
+                height: 100%;
+                background-color: wheat;
+            }
+
+            .container:nth-child(1) .box {
+                width: calc((100% - 30px) / 3);
+            }
+
+            .container:nth-child(2) {
+                margin-top: 30px;
+            }
+
+            .container:nth-child(2) .box {
+                width: calc((100% - 75px) / 6);
+            }
+
+            footer {
+                background-color: thistle;
+                height: 80px;
+                margin-top: 30px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <div id="in_header">
+                <div id="logo"><a href="#">LOGO</a></div>
+                <ul id="menu_wrap">
+                    <li class="menu"><a href="#">Menu</a></li>
+                    <li class="menu"><a href="#">Menu</a></li>
+                    <li class="menu"><a href="#">Menu</a></li>
+                    <li class="menu"><a href="#">Menu</a></li>
+                    <li class="menu"><a href="#">Menu</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <section id="sec1">
+            <div id="sec1_con"></div>
+        </section>
+
+        <section id="sec2">
+            <div class="container">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+            <div class="container">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+        </section>
+
+        <footer id="footer"></footer>
+
+        
+    </body>
+</html>
+<!-- 
+    <flex 레이아웃 문제>
+    Header  : H:80 / 좌측 LOGO(150x50), 우측 menu 5개(100x50)
+    Section1: 내부에 1200x300 콘텐츠 박스가 가로 중앙정렬
+    Section2: 1200px 너비 기준
+                1행 - 3개 박스(H:100) / 사이간격 15px
+                2행 - 6개 박스(H:100) / 사이간격 15px
+                1행-2행 사이간격 30px
+    Footer  : H:80
+-->

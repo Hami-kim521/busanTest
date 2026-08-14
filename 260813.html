@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>연산자</title>
+    </head>
+    <body>
+        <script>
+            // let name = prompt('이름을 입력하세요.');
+
+            // document.write(name);
+            // console.log(name);
+
+            // let num1 = 10;
+            // let num2 = 30;
+
+            // let sum = num1 + num2;
+            // let minus = num1 - num2;
+            // let multiple = num1 * num2;
+            // let divide = num1 / num2;
+            // let remainder = num1 % num2;
+            // let square = num1 ** num2;
+
+            // console.log(sum);
+            // console.log(minus);
+            // console.log(multiple);
+            // console.log(divide);
+            // console.log(remainder);
+            // console.log(square);
+
+
+            //let num1 = Number(prompt('첫번째 숫자를 입력하세요.'));
+            //let num2 = Number(prompt('두번째 숫자를 입력하세요.'));
+            //let num3 = prompt('숫자를 입력하세요.');
+
+            // let sum = num1 + num2;
+            // let divide = num1 / num2;
+
+            //let minus = num1 - num3;
+
+            // console.log(sum);
+            // console.log(divide);
+
+            //console.log(minus);
+            //console.log(typeof num3);
+
+            // let x = 1;
+            // let y = x++;
+
+            // console.log(x, y);
+
+            let num1 = Number(prompt('첫번째 숫자를 입력하세요.'));
+            let num2 = Number(prompt('두번째 숫자를 입력하세요.'));
+
+            console.log(num1 < num2 && num2 < 100);
+            console.log(num1 > num2 || num2 > 100);
+
+
+
+
+        </script>
+    </body>
+</html>
+
+<!-- 
+    <복습>
+    - 데이터 타입
+    1) 원시타입
+    - Number :
+    - String : '김하미'
+    - Boolean : true, false
+    - undefined : 변수는 존재하지만, 할당이 되지 않은 상태
+    - null : 변수는 존재하고, null이라는 값으로 할당된 상태 -> 이전의 값 참조X, 개발자가 의도적으로 설정한 값
+    - symbol : 유일무이한 값 생성, 다른 원시타입이랑 다르게 심볼 함수 호출해서 사용
+
+    2) 객체타입
+    - function : 동작을 처리할 때 사용
+    - array : 타입을 순서대로 나열해서 모아놓은 목록
+    - object : 어떤 대상 하나에 대한 정보를 묶어서 보관
+
+    - 변수
+    다양한 데이터를 이름을 지정해서 쉽고 반복적으로 사용할 수 있도록 담는 그릇
+    => let
+
+    - 상수
+    => const
+    
+    변수와 상수의 차이?
+    변수는 값을 재할당 가능, 상수는 값을 재할당 불가능
+
+    변수, 상수 => 선언과 할당 동시에 이뤄짐
+    camelCase
+
+
+    문제)
+    내 이름을 직접 입력을 해서 입력된 내용이 웹페이지에 출력, 콘솔창에도 출력
+
+
+
+    <연산자>
+
+    - 산술연산자
+
+    덧셈 : +
+    뺄셈 : -
+    곱셈 : *
+    나눗셈 : /
+    나머지 : %
+    제곱 : **
+
+    문제)
+    2개 수를 직접 입력 -> 나누기, 더하기 연산
+
+    - 비교연산자(조건문)
+
+    <
+    >
+    <=
+    >=
+    == 같다(1 == '1') 단순 비교 / 같지 않다(!=)
+    === 같다 => 양쪽의 데이터 타입까지 비교 / 같지 않다(!==) => 이걸 더 많이 사용! 자바스크립트가 유연한 언어라서 엄격하게 코드를 짜야함
+
+    - 할당연산자
+
+    += => x = x + y => x += y
+    -= => x = x - y => x -= y
+    *= => x = x * y => x *= y
+    /= => x = x / y => x /= y
+    %= => x = x % y => x %= y
+    **= => x = x ** y => x **= y
+
+    - 증감연산자(반복문)
+
+    1) 전위증감 : ++x, --x : 1씩 증가 or 감소
+    2) 후위증감 : x++, x-- : 1씩 증가 or 감소 => 사용 빈도 수 높음
+    
+    
+    - 논리연산자(조건문, 반복문)
+    1) and(&&) : 모든 조건이 true => true 
+    2) or(||) : 하나라도 조건이 true => true => 조건이 둘다 false false를 반환
+
+    ex) let num1 = 10;
+        let num2 = 30;
+
+        console.log(num1 < num2 && num1 < 20); => true
+        console.log(num1 < 20 && num1 > num2); => false
+        
+        console.log(num1 < num2 || num1 < 20); => true
+        console.log(num1 < 20 || num1 > num2); => true
+
+
+    문제)
+
+    숫자 2개 입력받고, 입력 받은 수를 비교해서 콘솔창에 결과가 나오게
+    
+
+
+-->

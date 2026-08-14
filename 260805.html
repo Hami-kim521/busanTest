@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>grid</title>
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+
+            .container {
+                width: 100%;
+                margin: 0 auto;
+                display: grid;
+                background-color: lightgrey;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                /* 열의 갯수와 너비 설정 */
+                grid-template-rows: 200px;
+                /* 행의 갯수와 높이 설정 */
+                grid-gap: 20px 50px;
+                /* 속성값 순서 : row-gap column-gap */
+            }
+            
+            .items {
+                text-align: center;
+                font: 30px / 200px '';
+                background-color: yellow;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="items">1</div>
+            <div class="items">2</div>
+            <div class="items">3</div>
+            <div class="items">4</div>
+            <div class="items">5</div>
+        </div>
+    </body>
+</html>

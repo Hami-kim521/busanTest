@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>가상요소예제</title>
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+
+            a {
+                text-decoration: none;
+                color: black;
+            }
+
+            ul, li {
+                list-style: none;
+            }
+
+
+            #wrap {
+                width: 800px;
+                border: 10px solid black;
+                margin: 50px auto;
+            }
+
+            header, section, footer {
+                width: 100%;
+                position: relative;
+            }
+
+            header {
+                height: 100px;
+                background-color: lightgrey;
+                text-align: center;
+                font: 900 20px / 100px '';
+            }
+
+            #logo {
+                width: 100px;
+                height: 100%;
+                float: left;
+                background-color: deepskyblue;
+            }
+
+            #menu_wrap {
+                width: 600px;
+                height: 100%;
+                float: right;
+                background-color: violet;
+            }
+
+            #menu_wrap li {
+                width: 25%;
+                height: 100%;
+                float: left;
+                position: relative;
+                transition-duration: 0.5s;
+            }
+
+            #menu_wrap li::after {
+                width: 0px;
+                height: 5px;
+                background-color: crimson;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                content: '';
+                transition-duration: 0.5s;
+            }
+
+            #menu_wrap li:hover {
+                background-color: deeppink;
+            }
+
+            #menu_wrap li:hover::after {
+                width: 150px;
+            }
+
+
+            /* section1 */
+            #sec1 {
+                width: 100%;
+                height: 250px;
+                background-color: slategray;
+            }
+
+            #sec1 h1 {
+                width: 100%;
+                position: absolute;
+                top: 100px;
+                left: 0;
+                text-align: center;
+            }
+
+            #sec1 h1::before, #sec1 h1::after {
+                content: '"';
+                position: absolute;
+                top: -10px;
+                font-size: 50px;
+            }
+
+            #sec1 h1::before {
+                left: 230px;
+            }
+
+            #sec1 h1::after {
+                right: 230px;
+            }
+
+            .title {
+                width: 100%;
+                height: 80px;
+                background-color: lightgoldenrodyellow;
+                text-align: center;
+                font: 20px / 80px '';
+                position: relative;
+            }
+
+            .title::before, .title::after {
+                width: 100px;
+                height: 1px;
+                content: '';
+                background-color: black;
+                position: absolute;
+                top: 40px;
+            }
+
+
+            .title::before {
+                left: 250px;
+            }
+
+            .title::after {
+                right: 250px;
+            }
+
+            .con {
+                width: 100%;
+                height: 200px;
+                background-color: gold;
+                padding: 50px;
+                box-sizing: border-box;
+            }
+
+            footer {
+                height: 50px;
+                background-color: dimgrey;
+                padding: 15px 0;
+                box-sizing: border-box;
+            }
+
+            #site_wrap {
+                width: 400px;
+                margin: 0 auto;
+            }
+
+            #site_wrap li {
+                width: 100px;
+                float: left;
+                position: relative;
+                text-align: center;
+            }
+
+            #site_wrap li::after {
+                width: 1px;
+                height: 10px;
+                content: '';
+                background-color: black;
+                position: absolute;
+                top: 9px;
+                left: 100px;
+            }
+
+            #site_wrap li:last-child::after {
+                display: none;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <header>
+                <div id="logo"><a href="#">LOGO</a></div>
+                <ul id="menu_wrap">
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="#">Menu</a></li>
+                </ul>
+            </header>
+            <section id="sec1">
+                <h1>언제나 마음은 태양</h1>
+            </section>
+
+            <section id="sec2">
+                <div class="title">Title</div>
+                <div class="con">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates earum quis, placeat error omnis magni. Minima tempore rem atque nisi numquam quo ducimus doloremque, ea voluptatibus molestiae dolores, est vel.</p>
+                </div>
+            </section>
+
+            <section id="sec3">
+                <div class="title">Title</div>
+                <div class="con"></div>
+            </section>
+
+            <footer>
+                <ul id="site_wrap">
+                    <li><a href="#">Site</a></li>
+                    <li><a href="#">Site</a></li>
+                    <li><a href="#">Site</a></li>
+                    <li><a href="#">Site</a></li>
+                </ul>
+            </footer>
+        </div>
+    </body>
+</html>

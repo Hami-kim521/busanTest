@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>vw, vh</title>
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+
+            #box {
+                width: 100%;
+                height: 50vh;
+                background-color: gold;
+            }
+
+            /* #out_box {
+                width: 1200px;
+                height: 500px;
+                background-color: teal;
+                margin: 100px;
+            }
+
+            .in_box {
+                width: 380px;
+                height: 100%;
+                background-color: royalblue;
+                margin-right: 30px;
+                float: left;
+                text-align: center;
+                font-size: 80px;
+                line-height: 500px;
+            }
+
+            .in_box:last-child{
+                margin-right: 0;
+            } */
+
+
+            #out_box {
+                width: 62.5vw;
+                height: 26.041vw;
+                background-color: teal;
+                margin: 5.208vw;
+            }
+
+            .in_box {
+                width: 19.791vw;
+                height: 100%;
+                background-color: royalblue;
+                margin-right: 1.5625vw;
+                float: left;
+                text-align: center;
+                font-size: 4.1666vw;
+                line-height: 26.041vw;
+            }
+
+            .in_box:last-child{
+                margin-right: 0;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="box"></div>
+
+        <div id="out_box">
+            <div class="in_box">1</div>
+            <div class="in_box">2</div>
+            <div class="in_box">3</div>
+        </div>
+    </body>
+</html>
+
+<!-- 
+    <vw, vh - 가변 단위>
+    - px : 절대 단위
+    - % : 상대 단위
+    - em : 부모 요소의 글자 크기 기준 => 
+    - rem : html(루트 요소)의 글자 크기 기준 => html에 따로 글자 크기가 없다면 브라우저에 자동으로 지정된 글자 크기 16px이 기준
+    
+    - vw(viewport width) : 뷰포트의 너비
+        - width와 관련된 단위, 화면너비에 영향
+        - 모니터 해상도 마다 표현 차이
+        - 브라우저 크기를 가로로 줄이면 브라우저 기준의 비율대로 축소
+        - vw, % : (변경하고싶은 개체의 px값 / 최상위값(기본값 1920px)) * 100
+        - ex) (150px / 1920px) * 100 = 7.8125vw
+        - 가로에 해당하는 마진, 폰트 사이즈, line-height 등
+
+    - vh(viewport height) : 뷰포트의 높이
+        - height와 관련된 단위, 화면높이에 영향
+        - 높이값을 퍼센트로 표현할 수 없을 때 사용(화면을 각 기기별로 가득 채울 때 사용, 반응형에 사용X)
+        - 브라우저 크기를 세로로 줄이면 브라우저 기준의 비율대로 축소
+-->

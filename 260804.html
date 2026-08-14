@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>flex 레이아웃</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }   
+
+            ul, li {
+                list-style: none;
+            }
+
+
+            a {
+                text-decoration: none;
+                color: black;
+            }
+
+
+            /* body {
+                display: flex;
+            }
+
+            .container {
+                display: flex;
+                width: 500px;
+                height: 500px;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                background-color: steelblue;
+            }
+
+            .items {
+                width: 100px;
+                height: 100px;
+                background-color: gold;
+                border: 5px solid dimgray;
+                box-sizing: border-box;
+                font-size: 40px;
+            } */    
+
+            /* body {
+                display: flex;
+                justify-content: center;
+            } */
+
+            /* .container {
+                width: 50%;
+                height: 700px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                margin-top: 50px;
+            }
+
+            .items_wrap {
+                width: 100%;
+                height: 200px;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .item {
+                width: 100%;
+                height: 100%;
+                background-color: tomato;
+            }
+
+            .items_wrap:nth-child(2) .item {
+                width: calc((100% - 100px) / 3);
+            }
+
+            .items_wrap:nth-child(3) .item {
+                width: calc((100% - 50px) / 2);
+            } */
+
+            /* .container {
+                width: 60%;
+                height: 720px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                margin-top: 60px;
+            }
+
+            .items_wrap {
+                width: 100%;
+                height: 150px;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .item {
+                width: 100%;
+                height: 100%;
+                background-color: royalblue;
+            }
+
+            .items_wrap:nth-child(1) .item {
+                width: calc((100% - 60px) / 2);
+            }
+
+            .items_wrap:nth-child(2) .item {
+                width: calc((100% - 180px) / 4);
+            }
+
+            .items_wrap:nth-child(4) .item {
+                width: calc((100% - 120px) / 3);
+            } */
+
+            #wrap {
+                width: 100%;
+            }
+
+            header, section, footer {
+                width: 100%;
+            }
+
+            #in_header, #container {
+                width: 1200px;
+                height: 100%;
+                background-color: steelblue;
+            }
+
+            header {
+                height: 100px;
+                background-color: lightgrey;
+                display: flex;
+                justify-content: center;
+            }
+
+            #in_header {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            #logo {
+                width: 150px;
+                height: 100%;
+                background-color: tomato;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #menu_wrap {
+                width: 800px;
+                height: 100%;
+                background-color: skyblue;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #menu_wrap li {
+                width: 200px;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #sec1 {
+                background-color: violet;
+                height: 700px;
+            }
+
+            #sec2 {
+                height: 500px;
+                background-color: pink;
+                margin: 100px auto;
+                display: flex;
+                justify-content: center;
+            }
+
+            #container {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .con {
+                width: 380px;
+                height: 100%;
+                background-color: yellowgreen;
+            }
+
+            footer {
+                height: 100px;
+                background-color: orchid;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <!-- <div class="container">
+            <div class="items">1</div>
+            <div class="items">2</div>
+            <div class="items">3</div>
+        </div>
+        <div class="container">
+            <div class="items">4</div>
+            <div class="items">5</div>
+            <div class="items">6</div>
+        </div> -->
+ 
+        <!-- <div class="container">
+            <div class="items_wrap">
+                <div class="item"></div>
+            </div>
+            <div class="items_wrap">
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+            </div>
+            <div class="items_wrap">
+                <div class="item"></div>
+                <div class="item"></div>
+            </div>
+        </div> -->
+
+        <!-- <div class="container">
+            <div class="items_wrap">
+                <div class="item"></div>
+                <div class="item"></div>
+            </div>
+            <div class="items_wrap">
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+            </div>
+            <div class="items_wrap">
+                <div class="item"></div>
+            </div>
+            <div class="items_wrap">
+                <div class="item"></div>
+                <div class="item"></div>
+                <div class="item"></div>
+            </div>
+        </div> -->
+        
+        <div id="wrap">
+            <header>
+                <div id="in_header">
+                    <div id="logo"><a href="#">logo</a></div>
+                    <ul id="menu_wrap">
+                        <li><a href="#">menu</a></li>
+                        <li><a href="#">menu</a></li>
+                        <li><a href="#">menu</a></li>
+                        <li><a href="#">menu</a></li>
+                    </ul>
+                </div>
+            </header>
+            <section id="sec1"></section>
+            <section id="sec2">
+                <div id="container">
+                    <div class="con"></div>
+                    <div class="con"></div>
+                    <div class="con"></div>
+                </div>
+            </section>
+            <footer></footer>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    </body>
+</html>
+
+<!-- 
+
+    <flex 레이아웃(반응형-2)>
+    
+    
+    
+    
+    
+    
+    문제)
+    container: 60% × 720px, 중앙정렬, 상단 여백 60px
+
+    문제)
+    header 높이 100px
+    in_header 가로 1200px
+    logo 가로 200px
+    menu_wrap 가로 800px
+    section1 높이 700px
+    section2 높이 500px 
+    container 1200px
+    content 가로 380px 
+    섹션간 간격100px
+    footer 높이 100px
+    폰트크기 20px
+-->
