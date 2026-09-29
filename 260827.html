@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="jquery.js"></script>
+    </head>
+    <body>
+        
+        <div id="out_box">
+            <div id="in_box">더블클릭!</div>
+        </div>
+
+
+
+
+        <script>
+            $(document).ready(function() {
+
+                $('#out_box').css({
+                    width: 500,
+                    height: 500,
+                    backgroundColor: 'lightgrey',
+                });
+
+                $('#in_box').css({
+                    width: '100%',
+                    height: '100%',
+                    textAlign: 'center',
+                    lineHeight: '300px',
+                    fontSize: '40px',
+                    display: 'none',
+                    userSelect: 'none', //클릭이나 더블클릭 했을 때 파란색으로 안에 컨텐츠가 선택되지 않게!!
+                });
+
+                $('#out_box').click(function() {
+                    $(this).animate({
+                        width: 300,
+                        height: 300,
+                        marginLeft: 500,
+                    }, 2000, function() {
+                        $('#in_box').css({
+                            display : 'block',
+                        });
+                    });
+                });
+
+                $('#in_box').dblclick(function() {
+                    $(this).css({
+                        backgroundColor : 'tomato',
+                        color: 'white',
+                    });
+                });
+
+
+
+            });
+
+
+
+
+
+        </script>
+    </body>
+</html>
+
+<!-- 
+    문제
+    => 부모박스 500*500, 자식박스 부모가득
+    => out_box를 클릭하면 2초 동안 크기 300*300 변경하면서 오른쪽으로 500px만큼 이동
+    => 이동이 끝나면 in_box 텍스트 표시
+    => in_box 더블클릭하면 배경색과 폰트색 변경
+
+
+
+
+
+
+
+
+-->

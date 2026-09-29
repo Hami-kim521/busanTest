@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>page layout</title>
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+            }
+
+            #wrap {
+                width: 100%;
+                height: 400vh;
+                position: relative;
+                top:0;
+                left:0;
+            }
+
+            .con {
+                width: 100%;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .sq {
+                width: 80%;
+                height: 80%;
+                background-color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .btn {
+                width: 10vw;
+                height: 10vh;
+                background-color: dimgray;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                font-size: 50px;
+                user-select: none;
+                cursor: pointer;
+            }
+
+
+
+        </style>
+        <script src="jquery.js"></script>
+    </head>
+    <body>
+        
+        <div id="wrap">
+            <section class="con">
+                <div class="sq">
+                    <div class="btn" id="btn1">▼</div>
+                </div>
+            </section>
+            <section class="con">
+                <div class="sq">
+                    <div class="btn" id="btn2">▼</div>
+                </div>
+            </section>
+            <section class="con">
+                <div class="sq">
+                    <div class="btn" id="btn3">▼</div>
+                </div>
+            </section>
+            <section class="con">
+                <div class="sq">
+                    <div class="btn" id="btn4">▲</div>
+                </div>
+            </section>
+        </div>
+
+
+
+
+
+
+
+
+        <script>
+            $(document).ready(function() {
+                let ww = $(window).width();
+                let wh = $(window).height();
+                let bg = ['gold', 'lightgreen', 'tomato', 'royalblue'];
+
+                 $('.con').css({
+                     backgroundColor : function(index) {
+                         return bg[index];
+                     }
+                 });
+
+                // $('#btn1').click(function() {
+                //     $('#wrap').animate({
+                //         top: -wh,
+                //     });
+                // });
+
+                // $('#btn2').click(function() {
+                //     $('#wrap').animate({
+                //         top: -wh*2,
+                //     });
+                // });
+
+                // $('#btn3').click(function() {
+                //     $('#wrap').animate({
+                //         top: -wh*3,
+                //     });
+                // });
+
+                // $('#btn4').click(function() {
+                //     $('#wrap').animate({
+                //         top: 0,
+                //     });
+                // });
+
+                //함수화ver.
+                function moveDown(ele, moveAmount) {
+                    $(ele).click(function() {
+                        $('#wrap').animate({
+                            top: moveAmount,
+                        });
+                    });
+                }
+
+                // moveDown('#btn1', -wh);
+                // moveDown('#btn2', -wh*2);
+                // moveDown('#btn3', -wh*3);
+                // moveDown('#btn4', 0);
+
+
+                //함수+재사용 ver.
+                for(let i = 1; i <= 4; i++){
+                    let four = (i === 4) ? 0 : -wh*i;
+                    moveDown(`#btn${i}`, four);
+                }
+
+
+
+
+
+
+
+            }); //end
+
+
+
+        </script>
+    </body>
+</html>
+
+
+
+
+<!-- 
+    문제 - 애니메이트 일자페이지             
+
+    css
+    => 레이아웃
+    => 섹션크기 화면가득
+    => container크기 80%
+    => 버튼크기 화면가로의 10% 
+    => 박스 안에 화살표, 마지막 홈 텍스트, 가운데정렬
+
+    script
+    => 윈도우 가로, 세로값 변수지정
+    => index값으로 색상 변수로 지정
+    => 배경색 index값으로 순서대로 지정(각 섹션 다른색상)
+    => 클릭이벤트
+    => 버튼박스 클릭시 아래 부모div 페이지 애니메이트 이동
+    => 마지막 버튼박스 클릭시 첫번째 메인으로 애니메이트 이동
+
+
+    => wrap 위치값 고정
+    => con 안에 div태그 버튼박스 (크기 윈도우 가로값 0.1) 
+    => 박스 안에 화살표, 마지막 홈 텍스트, 가운데정렬
+
+
+
+
+
+
+
+
+
+
+
+
+-->

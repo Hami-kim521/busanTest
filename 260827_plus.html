@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+
+            #wrap {
+                width: 300vw;
+                height: 300vh;
+                position: fixed;
+                top: -100vh;
+                left: -100vw;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #middle_wrap {
+                width: 300vw;
+                height: 100vh;
+                display: flex;
+                align-items: center;
+            }
+
+            .btn {
+                width: 10vw;
+                height: 10vh;
+                background-color: tomato;
+                color: white;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            section {
+                width: 100vw;
+                height: 100vh;
+                display: flex;
+            }
+
+            .center {
+                justify-content: center;
+            }
+
+            .middle {
+                align-items: center;
+            }
+
+            .bottom {
+                align-items: flex-end;
+            }
+
+            .top {
+                align-items: flex-start;
+            }
+
+            .left {
+                justify-content: flex-start;
+            }
+
+            .right {
+                justify-content: flex-end;
+            }
+
+            .center_wrap {
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+
+            .mid_btn_wrap {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            
+
+        </style>
+        <script src="jquery.js"></script>
+    </head>
+    <body>
+        <div id="wrap">
+            <section class="top_wrap center bottom">
+                <div class="btn" id="top_center">아래로</div>
+            </section>
+
+            <div id="middle_wrap">
+                <section class="left_wrap middle right">
+                    <div class="btn" id="left_center">오른쪽으로</div>
+                </section>
+                <section class="center_wrap">
+                    <div class="btn" id="center_top">위로</div>
+                    <div class="mid_btn_wrap middle">
+                        <div class="btn" id="center_left">왼쪽으로</div>
+                        <div class="btn" id="center_right">오른쪽으로</div>
+                    </div>
+                    <div class="btn" id="center_bottom">아래로</div>
+                </section>
+                <section class="right_wrap middle left">
+                    <div class="btn" id="right_center">왼쪽으로</div>
+                </section>
+            </div>
+
+            <section class="bottom_wrap center top">
+                <div class="btn" id="bottom_center">위로</div>
+            </section>
+        </div>
+
+
+        <script>
+            $(document).ready(function() {
+                let ww = $(window).width();
+                let wh = $(window).height();
+                let bg = ['skyblue', 'violet', 'gold', 'lightgreen', 'pink'];
+
+                $('section').css({
+                    backgroundColor : function(index) {
+                        return bg[index];
+                    }
+                });
+
+                $('#center_top').click(function() {
+                    $('#wrap').animate({
+                        top: 0,
+                    });
+                });
+
+                $('#top_center').click(function() {
+                    $('#wrap').animate({
+                        top: -wh,
+                    });
+                });
+
+                $('#center_right').click(function() {
+                    $('#wrap').animate({
+                        left: -ww*2,
+                    });
+                });
+
+                $('#right_center').click(function() {
+                    $('#wrap').animate({
+                        left: -ww,
+                    });
+                });
+
+                $('#center_bottom').click(function() {
+                    $('#wrap').animate({
+                        top: -wh*2,
+                    });
+                });
+
+                $('#bottom_center').click(function() {
+                    $('#wrap').animate({
+                        top: -wh,
+                    });
+                });
+
+                $('#center_left').click(function() {
+                    $('#wrap').animate({
+                        left: 0,
+                    });
+                });
+
+                $('#left_center').click(function() {
+                    $('#wrap').animate({
+                        left: -ww,
+                    });
+                });
+
+
+            });
+
+
+        </script>
+    </body>
+</html>
+
+
+
+
+<!-- 
+    문제 - 애니메이트 플러스페이지
+    body
+    => 전체wrap
+    => + 모양으로 구성할 부모섹션 5개 생성
+    => 각 섹션 안에 버튼 추가
+
+    css
+    => wrap크기 화면크기의 가로3배, 세로3배
+    => 섹션크기 화면 가득  
+    => 버튼크기 화면 가로크기 10%
+    => flex속성이용 레이아웃
+
+    script
+    => 윈도우 가로, 세로값 변수지정
+    => 전체 wrap 가로, 세로 윈도우 3배값 지정
+    => index값으로 색상 변수로 지정
+    => 배경색 index값으로 순서대로 지정(각 섹션 다른색상)
+    => wrap 초기위치 < + 중앙 >
+
+
+    => wrap 위치값 고정
+    => 버튼 클릭시 각 방향의 부모섹션 페이지 애니메이트 이동
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-->

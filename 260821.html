@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        
+
+
+
+
+
+        <script>
+            // let name = prompt('이름을 적어주세요.');
+            // let home = prompt('사는 곳을 적어주세요.');
+
+            // function introduce(myname, myhome) {
+            //     document.write(`안녕하세요, 저는 ${name}입니다. <br/> 제가 사는 곳은 ${home} 입니다.`);
+            // }
+
+            // introduce(name, home);
+
+
+        //    let names = ['이지은', '유리', '김성민', '김민', '선우민우'];
+
+        //    function getLongName(name) {
+        //        let nameArray = [];
+
+        //        for(let i = 0; i < names.length; i++) {
+        //             if(names[i].length >= 3) {
+        //                 nameArray.push(names[i]);
+        //             }
+        //        }
+
+        //        return nameArray;
+        //    }
+
+        //    console.log(getLongName(names));
+
+        // let scores = [10, 99, 100, 45, 78, 29];
+
+        // const getAvg = (number) => {
+        //     let sum = 0;
+
+        //     for(let i = 0; i < scores.length; i++) {
+        //         sum += scores[i];
+        //     }
+
+        //     let avg = sum / scores.length;
+        //     return avg;
+        // }
+
+        // document.write(getAvg(scores));
+
+        // let allowance = [5000, -13000, 30000, 2000, -5500, 10000];
+        
+
+        // const calculateMoney = (money) => {
+        //     let total = 0;
+        //     for(let i = 0; i < allowance.length; i++) {
+        //         if(allowance[i] < 0) {
+        //             total += allowance[i];
+        //         }
+        //     }
+        //     return total;
+        // }
+
+        // document.write(calculateMoney(allowance));
+
+
+
+        //let allowance = [5000, -13000, 30000, 2000, -5500, 10000];
+        
+        let total = 0; //total이 함수 밖에 선언이 되면 함수가 실행될때마다 계산이 리셋이 되지 않고 이전 결과가 합산이 된 상태로 계산
+        const calculateMoney = (records) => {
+            
+            for(let i = 0; i < records.length; i++) {
+                if(records[i] < 0) {
+                    total += records[i];
+                }
+            }
+            return total;
+        }
+
+       //document.write(calculateMoney(allowance));
+        document.write(calculateMoney([5000, -1000]));
+        document.write(calculateMoney([3000, -2000]));  
+        
+
+
+
+
+
+
+
+
+
+
+        </script>
+    </body>
+</html>
+
+<!-- 
+    문제)
+    1. 이름 입력받는 변수, 사는 곳 입력받는 변수 선언
+    2. 이름, 사는 곳 순서의 매개변수로 출력 함수 선언
+    3. 출력결과(웹)
+        안녕하세요. (이름)입니다.
+        사는 곳은 (지역)입니다.
+    4. 매개변수 사용, 함수 호출
+
+    문제)
+    이름 글자 수가 3글자 이상인 이름들만 담은 배열을 반환하는 함수를 만드세요.
+
+    ['이지은', '유리', '김성민', '김민', '선우민우'];
+
+    문제)
+    배열 평균 구하기 함수
+    [10, 99, 100, 45, 78, 29];
+
+    문제)
+    용돈 사용 내역(양수는 받은 돈, 음수는 쓴 돈)이 담긴 배열을 받아서, 쓴 돈(음수)만 모두 더한 총액을 반환하는 함수
+    
+    [5000, -13000, 30000, 2000, -5500, 10000];
+-->

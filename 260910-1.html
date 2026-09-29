@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>totallayout</title>
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+
+            ul, li {
+                list-style: none;
+            }
+
+            a {
+                text-decoration: none;
+                color: black;
+            }
+
+            #wrap {
+                width: 100%;
+            }
+
+            header, section, footer {
+                width: 100%;
+                float: left;
+                position: relative;
+            }
+
+            header {
+                height: 100px;
+                background-color: lightskyblue;
+                padding: 10px 30px;
+                box-sizing: border-box;
+            }
+
+            #logo {
+                width: 200px;
+                height: 80px;
+                background-color: tomato;
+                text-align: center;
+                font: bold 50px / 80px '';
+                float: left;
+            }
+
+            #menu_wrap {
+                width: 900px;
+                height: 80px;
+                background-color: gold;
+                float: right;
+            }
+
+            #menu_wrap li {
+                width: 25%;
+                height: 100%;
+                float: left;
+                text-align: center;
+                font: 14px / 80px '';
+            }
+
+            #menu_wrap li:hover {
+                background-color: burlywood;
+            }
+
+            #menu_wrap li:hover a {
+                color: white;
+            }
+
+            #sec1 {
+                height: 700px;
+                background-color: lightblue;
+            }
+
+            #title {
+                width: auto;
+                height: auto;
+                background-color: turquoise;
+                text-align: center;
+                font-size: 100px;
+                font-weight: bold;
+                position: absolute;
+                top: 70%;
+                left: 50%;
+                transform: translate(-70%, -50%);
+                opacity: 0;
+                animation: title_move 1s forwards;
+            }
+
+            /* 
+                경우에 따라 선택해서 사용!
+
+                position: absolute, top, left 50%씩 주면 margin-top: -(높이 1/2), margin-left: -(너비 1/2)주면 섹션 정중앙에 위치
+                                                        transform: translate(-탑 값, px or %, -left값, px or %);
+                display:flex, align-items:center, justify-content:center
+            */
+
+            @keyframes title_move {
+                0% {
+                    top: 70%;
+                    opacity: 0;
+                }
+
+                100% {
+                    top: 50%;
+                    opacity: 1;
+                }
+            }
+
+            #sec2 {
+                height: 500px;
+                background-color: silver;
+                margin: 100px auto;
+
+            }
+
+            .box {
+                width: 300px;
+                height: 300px;
+                background-color: orchid;
+                position: absolute;
+                opacity: 0;
+                margin-top: -150px;
+                margin-left: -150px;
+            }
+
+            #box1 {
+                top: 50%;
+                left: 80%;
+            }
+
+            #sec3 {
+                height: 600px;
+                background-color: springgreen;
+                margin-bottom: 100px;
+            }
+
+            #box2 {
+                top: 90%;
+                left: 50%;
+            }
+
+            footer {
+                height: 150px;
+                background-color: teal;
+            }
+
+            #top_btn {
+                width: 80px;
+                height: 80px;
+                position: fixed;
+                bottom: 100px;
+                right: 100px;
+                font: bold 30px / 80px '';
+                text-align: center;
+                cursor: pointer;
+                display: none;
+                background-color: cornflowerblue;
+            }
+
+
+        </style>
+        <script src="jquery.js"></script>
+        <script src="jquery.easing.1.3.js"></script>
+    </head>
+    <body>
+        <div id="wrap">
+            <!-- header -->
+            <header>
+                <div id="logo">LOGO</div>
+                <ul id="menu_wrap">
+                    <li><a href="#">menu1</a></li>
+                    <li><a href="#">menu2</a></li>
+                    <li><a href="#">menu3</a></li>
+                    <li><a href="#">menu4</a></li>
+                </ul>
+            </header>
+
+            <!-- section1 -->
+            <section id="sec1">
+                <div id="title">title</div>
+            </section>
+
+            <!-- section2 -->
+            <section id="sec2">
+                <div class="box" id="box1"></div>
+            </section>
+
+            <!-- section3 -->
+            <section id="sec3">
+                <div class="box" id="box2"></div>
+            </section>
+
+            <!-- footer -->
+            <footer></footer>
+
+            <!-- top버튼 -->
+            <div id="top_btn">TOP</div>
+        </div>
+
+
+
+
+        <script>
+            $(document).ready(function() {
+                
+                
+                //topbtn 이벤트
+                $(window).scroll(function() {
+                    let sct = $(window).scrollTop();
+
+                    if(sct > 100) {
+                        $('#top_btn').fadeIn(500);
+                    } else {
+                        $('#top_btn').fadeOut(500);
+                    }
+                });
+
+                $('#top_btn').click(function() {
+                    $('html, body').animate({
+                        scrollTop: 0,
+                    });
+                });
+
+
+                //box 애니메이션 이벤트
+                $(window).scroll(function() {
+                    let sct = $(window).scrollTop();
+
+                    //console.log(sct);
+
+                    if(sct >= 400 && sct < 850) {
+                        $('#box1').animate({
+                            left: '50%',
+                            opacity : 1,
+                        }, 1000);
+                    } else if(sct >= 850) {
+                        $('#box2').animate({
+                            top: '50%',
+                            opacity : 1,
+                        }, 1000, 'easeOutBack');
+                    }
+                });
+
+            }); //end
+
+
+        </script>
+    </body>
+</html>
+
+
+<!-- 
+    문제)
+    헤더 높이 100px 패딩 상하10px 좌우30px
+    로고 크기 200*80
+    메뉴랩 크기 900*80
+    섹션1 높이 700px
+    섹션2 높이 500px
+    섹션3 높이 600px
+    섹션 간격 100px
+    박스 크기 300*300
+    탑버튼 크기 80*80
+    푸터 높이 150px
+
+    타이틀 아래에서 위로 등장 css애니메이션
+    섹션2 박스 오른쪽에서 중앙으로 등장 js 애니메이트
+    섹션3 박스 아래쪽에서 중앙으로 등장 js 애니메이트
+    top버튼 최상단에서 숨김
+
+
+-->

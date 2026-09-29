@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>변수값 조절</title>
+        <script src="jquery.js"></script>
+    </head>
+    <body>
+        
+
+        <!-- <div id="box"></div> -->
+
+        <div id="wrap">
+            <div id="con">
+                <div id="circle"></div>
+            </div>
+
+            <div id="btn">click</div>
+
+
+        </div>
+
+        <script>
+            $(document).ready(function() {
+                
+                // $('#box').css({
+                //     width:300,
+                //     height:300,
+                //     backgroundColor: 'salmon',
+                // });
+
+                // let i = 0; //박스를 누른 횟수
+
+                // $('#box').click(function() {
+                //     if(i == 0) {
+                //         $(this).css({
+                //             backgroundColor: 'lightblue',
+                //         });
+                //         i++;
+                //     } else if(i == 1) {
+                //         $(this).css({
+                //             backgroundColor: 'gold',
+                //         });
+                //         i++;
+                //     } else if(i == 2) {
+                //         $(this).css({
+                //             backgroundColor: 'salmon',
+                //         });
+                //         i = 0;
+                //     }
+                // });
+
+
+                $('#wrap').css({
+                    width: 600,
+                    height: 300,
+                    border: '10px solid black',
+                    margin: '50px auto',
+                });
+
+                $('#con').css({
+                    width: 600,
+                    height: 200,
+                    position: 'relative',
+                });
+
+                $('#circle').css({
+                    width: 200,
+                    height: 200,
+                    borderRadius : '50%',
+                    position: 'absolute',
+                    top:0,
+                    left:0,
+                    backgroundColor: 'tomato',
+                });
+
+                $('#btn').css({
+                    width: 600,
+                    height: 100,
+                    backgroundColor: 'lightgreen',
+                    textAlign: 'center',
+                    lineHeight: '100px',
+                    cursor: 'pointer',
+                });
+
+
+                let cw = $('#circle').width(); //200
+                let i = 0; //클릭 횟수
+
+                $('#btn').click(function() {
+                    if(i == 0) {
+                        $('#circle').animate({
+                            left: cw,
+                        }, 1000);
+                        i++
+                    }else if(i == 1) {
+                        $('#circle').animate({
+                            left: cw*2,
+                        }, 1000);
+                        i++;
+                    } else if(i == 2) {
+                        $('#circle').animate({
+                            left: 0,
+                        }, 1000);
+                        i=0;
+                    }
+                }); 
+
+
+
+
+
+
+
+
+
+
+
+
+            }); //end
+
+
+
+
+            
+        </script>
+    </body>
+</html>
+
+<!-- 
+    <변수값 조절>
+    변수를 조절해서 객체의 요소를 변경
+
+    문제)
+    script 작성
+    wrap 크기 600*300, 테두리, 상하 50px여백 가운데 정렬
+    컨테이너 높이 200, 위치값 설정
+    원형박스 크기 200*200, 위치값 설정
+    버튼박스 높이 100, 텍스트 정렬, 커서 포인터표시
+
+    이벤트 => 버튼클릭시 원형박스 오른쪽으로 200씩 이동 컨테이너 끝에서 원위치로 이동
+
+-->

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+        </style>
+        <script src="jquery.js"></script>
+    </head>
+    <body>
+
+        <!-- <div id="box"></div> -->
+
+            <!-- <ul id="container">
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul> -->
+
+
+        <div id="box"></div>
+
+
+
+        <script>
+            $(document).ready(function () {
+                // $('#box').css({
+                //     width: 300,
+                //     height: 300,
+                //     backgroundColor: 'royalblue',
+                // });
+
+                //mousemove : 마우스가 움직일 때 실행 이벤트 => 마우스 따라다니는 효과
+                // $('#box').mousemove(function(e) {
+                //     $('#box').css({
+                //         backgroundColor: 'gold',
+                //     });
+                //     //console.log(`현재 위치 : ${e.pageX}, ${e.pageY}`);
+                // });
+
+                //mouseenter : 마우스가 객체 영역에 들어갈 때 실행 이벤트
+                // $('#box').mouseenter(function() {
+                //     $('#box').css({
+                //         backgroundColor: 'gold',
+                //     });
+                //     //console.log('마우스 들어옴');
+                // });
+
+
+                // //mouseleave : 마우스가 객체 영역에 나올 때 실행 이벤트
+                // $('#box').mouseleave(function() {
+                //     $('#box').css({
+                //         backgroundColor: 'royalblue',
+                //     });
+                // });
+
+
+                // //mousedown : 마우스가 눌렀을 때 실행 이벤트
+                // $('#box').mousedown(function() {
+                //     $('#box').css({
+                //         backgroundColor: 'pink',
+                //     });
+                // });
+
+
+                // //mouseup : 마우스가 뗐을 때 실행 이벤트
+                // $('#box').mouseup(function() {
+                //     $('#box').css({
+                //         backgroundColor: 'lightgreen',
+                //     });
+                // });
+
+                //click : 마우스가 눌렀다가 뗐을 때 실행 이벤트
+                // $('#box').click(function() {
+                //     $('#box').css({
+                //         backgroundColor: 'tomato',
+                //     });
+                // });
+
+                // //dblclick : 마우스가 빠르게 두 번 눌렀다가 뗐을 때 실행 이벤트
+                // $('#box').dblclick(function() {
+                //     $('#box').css({
+                //         backgroundColor: 'violet',
+                //     });
+                // });
+                
+                //hover : mouseenter+mouseleave
+                // $('#box').hover(function() {
+                //     $(this).css({
+                //         backgroundColor: 'deeppink',
+                //     });
+                // }, function() {
+                //     $(this).css({
+                //         backgroundColor: 'royalblue',
+                //     });
+                // });
+
+                //this : 명령문 안에서 다시 자기자신 선택시 사용
+
+
+                // let bg = ['pink', 'gold', 'lightgreen'];
+
+                // $('#container').css({
+                //     width: 620,
+                //     height: 200,
+                //     margin: '100px auto',
+                // });
+
+                // $('#container li').css({
+                //     listStyle: 'none',
+                //     width: 200,
+                //     height: 200,
+                //     border: '5px solid black',
+                //     borderRadius: '50%',
+                //     boxSizing: 'border-box',
+                //     float: 'left', 
+                //     marginRight: '10px',
+                //     backgroundColor : function(index) {
+                //         return bg[index];
+                //     }
+                // });
+
+                // $('#container li:last-child').css({
+                //     marginRight:0,
+                // });
+
+                //ver1.
+
+                // $('#container li:nth-child(1)').hover(function() {
+                //     $('body').css({
+                //         backgroundColor: bg[0],
+                //     });
+                // }, function() {
+                //     $('body').css({
+                //         backgroundColor: 'white',
+                //     });
+                // });
+
+                // $('#container li:nth-child(2)').hover(function() {
+                //     $('body').css({
+                //         backgroundColor: bg[1],
+                //     });
+                // }, function() {
+                //     $('body').css({
+                //         backgroundColor: 'white',
+                //     });
+                // });
+
+                // $('#container li:nth-child(3)').hover(function() {
+                //     $('body').css({
+                //         backgroundColor: bg[2],
+                //     });
+                // }, function() {
+                //     $('body').css({
+                //         backgroundColor: 'white',
+                //     });
+                // });
+
+                //ver2. 함수
+                // function hoverColor(ele, color) {
+                //     $(ele).hover(function() {
+                //         $('body').css({
+                //             backgroundColor: color,
+                //         });
+                //     }, function() {
+                //         $('body').css({
+                //             backgroundColor: 'white',
+                //         });
+                //     });
+                // }
+
+                // hoverColor('#container li:nth-child(1)', 'pink');
+                // hoverColor('#container li:nth-child(2)', 'gold');
+                // hoverColor('#container li:nth-child(3)', 'lightgreen');
+
+
+                //ver3. 함수 + 반복문 + 재사용
+                // function hoverColor(ele, color) {
+                //     $(ele).hover(function() {
+                //         $('body').css({
+                //             backgroundColor: color,
+                //         });
+                //     }, function() {
+                //         $('body').css({
+                //             backgroundColor: 'white',
+                //         });
+                //     });
+                // }
+
+
+                // for(let i = 1; i <= 3; i++) {
+                //     hoverColor(`#container li:nth-child(${i})`, bg[i-1]);
+                // }
+
+                // $('#box').css({
+                //     width: 300,
+                //     height: 300,
+                //     backgroundColor: 'royalblue',
+                //     position: 'absolute',
+                //     top: 0,
+                //     left: 0,
+                // }).click(function() {
+                //     $(this).animate({
+                //         width: 500,
+                //         height: 500,
+                //     }, 1000, function() {
+                //         $(this).animate({
+                //             top: 500,
+                //             left: 500,
+                //         }, 1000);
+                //     });
+                // });
+
+
+                $('#box').css({
+                    width: 300,
+                    height: 300,
+                    backgroundColor: 'tomato',
+                }).click(function() {
+                    $(this).animate({
+                        marginLeft: 500,
+                    }, 1000, function(){
+                        $(this).css({
+                            backgroundColor: 'violet',
+                        });
+                    });
+                });
+
+
+
+
+
+
+
+
+
+
+            }); //end
+
+
+
+
+        </script>
+    </body>
+</html>
+
+<!-- 
+    <이벤트>
+    사용자가 웹문서 영역에서 마우스 또는 키보드 같은 입력장치로 동작을 하면 결과를 실행하는 명령
+    
+    $(선택자).이벤트명령(function() {
+        //실행될 코드
+    });
+
+
+    문제)
+    => 컨텐츠 감싸는 프레임 620*200 중앙정렬
+    => 원형프레임 3개 200*200, 테두리 5px 정원, 우측여백 10px
+    => 배경색 배열만들어서 지정
+
+    => 각 객체 호버시 배경화면 객체와 동일한 색상으로 변경
+
+    <animate>
+    시간에 따른 움직임 또는 애니메이션 작업시 사용
+    애니메이트 적용 속성
+    - 크기값:width, height
+    - 여백값:margin, padding
+    - 위치값:left, right, top, bottom(position 필수)
+    - 투명도:opacity(0~1)
+    - 스크롤 영역값
+
+    $(선택자).animate({
+        속성: 속성값,
+    }, 시간, 가속도 형태, 콜백함수);
+
+    => 시간 : 1s => 1000
+    => 가속도 형태 : 플러그인 사용
+    => animate 시작하고 동작 완료 후에 콜백함수로 다음 동작을 실행
+
+
+    문제)         
+    => 기존 box를 클릭하면 왼쪽에서 오른쪽으로 1초동안 500px 이동하고, 색상 변경
+
+
+
+
+
+-->

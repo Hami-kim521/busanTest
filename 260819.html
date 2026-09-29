@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        
+
+
+
+        <script>
+            /*for문 복습*/
+            // let num1 = Number(prompt('숫자를 입력하세요.'));
+            // let sum = 0;
+
+            // for(let i=1; i <= num1; i++) {
+            //     sum += i; // sum = sum + i; 
+            // }
+
+            // document.write(`1부터 ${num1}까지의 합 : ${sum}`);
+
+            // let inputNumber = Number(prompt('숫자를 입력하세요.'));
+            
+            // document.write(`${inputNumber}단 </br>`);
+
+            // if(inputNumber % 2 === 0) {
+            //     for(let a = 2; a <= 10; a += 2) {
+            //         document.write(`${inputNumber}X${a}=${inputNumber*a} <br/>`);
+            //     }
+            // } else {
+            //     for(let a = 1; a <= 10; a += 2) {
+            //         document.write(`${inputNumber}X${a}=${inputNumber*a} <br/>`);
+            //     }
+            // }
+
+
+            /*배열*/
+
+            // let animal = ['bear', 'fox', 'hippo', 'dog'];
+
+            // for(let i = 0; i < animal.length; i++) {
+            //     console.log(animal[i]);
+            // }
+
+            // let arr = [1, 6, 3, 8, 2, 10];
+            // let sum = 0;
+
+            // for(let i = 0; i < arr.length; i++) {
+            //     if(arr[i] > 5) {
+            //         sum += arr[i];
+            //     }
+            // }
+
+            // document.write(`5보다 큰 수의 합 : ${sum}`);
+
+            let numbers = [1, 2, 3, 4, 5, 6];
+        
+            for(let i=0; i < numbers.length; i++) {
+                if(numbers[i] % 2 === 0) {
+                    console.log(numbers[i]);
+                }
+            }
+
+
+
+
+
+        </script>
+    </body>
+</html>
+
+
+
+<!-- 
+    문제)
+    숫자를 입력을 받아 1부터 입력받은 숫자까지의 합을 웹문서에 출력하기
+    
+    1부터 입력받은 숫자까지의 합: 숫자
+
+    문제)
+
+    입력받은 숫자에 해당하는 구구단 출력
+    => 입력받은 숫자가 홀수이면 1~10까지 홀수 번째 숫자만 곱하기
+    => 입력받은 숫자가 짝수이면 1~10까지 짝수 번째 숫자만 곱하기
+    
+    ex)입력받은 숫자가 5이면
+   
+    5단입니다
+    5X1=5
+    5X3=15
+    5X5=25
+    5X7=35
+    5X9=45
+
+
+    <배열>
+    같은 타입 또는 다른 타입의 여러 데이터를 한 곳에 모아둔 자료구조
+    사용 빈도가 매우 높음.
+
+    일련의 데이터를 순서대로 나열하고, 인덱스를 통해 배열 안의 각 요소에 접근함
+
+    배열을 사용하는 이유
+    => 여러 개의 변수를 사용하지 않고도 데이터 관리하고 조작, 
+    => 데이터를 효율적으로 저장하고, 접근할 수 있게 해주고
+    => 다양한 메소드 통해 데이터를 쉽게 조작 가능
+
+    특징
+    => 동적 크기 : 필요에 따라 동적으로 크기(=길이)가 변함
+    => 다양한 타입 허용 : 숫자, 문자열, 객체 등 다양한 타입의 요소를 함께 저장가능
+    => 배열에는 내장된 메소드를 가지고 데이터를 쉽게 조작
+
+    인덱스 : 배열의 요소(배열 안에 있는 하나하나의 데이터)는 배열에서 자신의 위치를 나타내는
+    0 이상의 정수(맨 앞자리가 0이고 0부터 시작)
+
+    => 배열명[인덱스번호]
+
+    let arr = [];
+    let arr1 = [0, 2, 9, ...];
+    let arr2 = ['곰', '여우', '하마', ...];
+    let arr3 = [1, '곰', true, false, ...];
+    let arr4 = [[1, 1, 2], ['곰', '여우', '하마'], ...];
+
+    배열의 길이 : 배열의 크기(1번부터 시작)
+
+    => 배열명.length
+
+    문제)
+    let arr = [1, 6, 3, 8, 2, 10];
+    정수 배열에서 5보다 큰 값들만 골라 합을 구해 웹 출력하세요.
+
+
+
+-->

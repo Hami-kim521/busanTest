@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>top_btn 레이아웃</title>
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+
+            #wrap {
+                width: 100%;
+            }
+
+            header, section, footer {
+                width: 100%;
+                text-align: center;
+                font-size: 50px;
+            }
+
+            header {
+                height: 100px;
+                background-color: lightgrey;
+                line-height: 100px;
+            }
+
+            section {
+                height: 800px;
+                background-color: royalblue;
+                line-height: 800px;
+                margin-bottom: 100px;
+            }
+
+            footer {
+                height: 200px;
+                background-color: slategray;
+                line-height: 200px;
+            }
+
+            #top_btn {
+                width: 100px;
+                height: 100px;
+                text-align: center;
+                font: bold 30px / 100px '';
+                background-color: tomato;
+                position: fixed;
+                right: 100px;
+                bottom: 100px;
+                opacity: 0;
+                cursor: pointer;
+                transition: 0.5s;
+            }
+
+
+        </style>
+        <script src="jquery.js"></script>
+    </head>
+    <body>
+        <div id="wrap">
+            <header>header</header>
+            <section>sec1</section>
+            <section>sec2</section>
+            <footer>footer</footer>
+            <div id="top_btn">TOP</div>
+        </div>
+
+
+
+
+
+        <script>
+            $(document).ready(function() {
+
+                $(window).scroll(function() {
+                    let sct = $(window).scrollTop();
+                    
+                    if(sct > 100) {
+                        $('#top_btn').css({
+                            opacity: 1,
+                        });
+                    } else {
+                        $('#top_btn').css({
+                            opacity: 0,
+                        });
+                    }
+                });
+
+                $('#top_btn').click(function() {
+                    $('html, body').animate({
+                        scrollTop : 0,
+                    }, 500);
+                });
+
+            }); //end
+
+
+
+
+
+
+
+        </script>
+    </body>
+</html>
+
+
+
+<!-- 
+    문제)
+    css
+    header H 100px
+    section H 800px
+    footer H 200px
+    button 100*100 좌측,하단 100px여백
+
+    jquery
+    스크롤이 100px 이상 내려가면 top 버튼 활성화
+
+
+    문제
+    헤더 높이 100px 패딩 상하10px 좌우30px
+    로고 크기 200*80
+    메뉴랩 크기 900*80
+    섹션1 높이 700px
+    섹션2 높이 500px
+    섹션3 높이 600px
+    섹션 간격 100px
+    박스 크기 300*300
+    탑버튼 크기 80*80
+    푸터 높이 150px
+
+    타이틀 아래에서 위로 등장 css애니메이션
+    섹션2 박스 오른쪽에서 중앙으로 등장 js 애니메이트
+    섹션3 박스 아래쪽에서 중앙으로 등장 js 애니메이트
+    top버튼 최상단에서 숨김
+
+
+
+
+
+-->

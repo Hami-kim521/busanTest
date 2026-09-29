@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="jquery_2.js"></script>
+        <script src="jqueryTrans.js"></script>
+    </head>
+    <body>
+        
+        <div id="box">
+            <h1>CLICK!</h1>
+        </div>
+
+        <script>
+            $(document).ready(function() {
+
+                let bg = ['gold', 'royalblue'];
+                let i = 0;
+
+                //resize
+                function layout() {
+                    $('#box').css({
+                        width: $(window).width(),
+                        height: $(window).height(),
+                        backgroundColor: 'gold',
+                        textAlign : 'center',
+                        font : '900 100px /' + $(window).height() + 'px ""',
+                    });
+                }
+
+                layout(); //함수 호출해서 실행
+
+                function trans() {
+                    $('#box').transition({
+                        rotateX : '360deg',
+                    }, 1000, function() {
+                        $(this).transition({
+                            opacity: 0,
+                        }, 1000, function() {
+                            $(this).transition({
+                                opacity: 1,
+                                backgroundColor: bg[i],
+                            }, 1000, function() {
+                                $(this).transition({
+                                    rotateX : 0,
+                                }, 0);
+                            });
+                        });
+                    });
+                }
+
+                $('#box').click(function() {
+                    if(i === 0) {
+                        trans();
+                        i++;
+                    } else if(i === 1) {
+                        trans();
+                        i--;
+                    }
+                });
+
+                //반응형
+                $(window).resize(function() {
+                    layout();
+                });
+
+
+
+
+
+            }); //end
+
+
+        </script>
+    </body>
+</html>
+
+
+<!-- 
+    문제)
+    제이쿼리 트랜지션 콜백함수 이용
+    클릭시 x축기준 360도 회전(1s) 이후
+    사라짐 : 투명화 (1s) 이후
+    다른 색상변경으로 다시 나타남
+-->

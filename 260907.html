@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+        </style>
+        <script src="jquery.js"></script>
+    </head>
+    <body>
+        
+        <div id="box"></div>
+
+
+
+
+        <script>
+            $(document).ready(function() {
+
+                
+
+                // $('#box').css({
+                //     width: 0.65*ww,
+                //     height: 500,
+                //     backgroundColor: 'pink',
+                // });
+
+                // $(window).resize(function() {
+                //     ww = $(window).width();
+
+                //     $('#box').css({
+                //         width: 0.65*ww,
+                //     }); 
+                // });
+
+                // if(ww >= 1200) {
+                //     $('#box').css({
+                //         width: 1200,
+                //         height:500,
+                //         backgroundColor: 'lightblue',
+                //         margin: '50px auto',
+                //     });
+                // } else if(ww >= 960 && ww < 1200) {
+                //     $('#box').css({
+                //         width: 960,
+                //         height: 800,
+                //         backgroundColor: 'lightgreen',
+                //         margin: '50px auto',
+                //     });
+                // } else if(ww >= 760 && ww < 960) {
+                //     $('#box').css({
+                //         width: 760,
+                //         height: 200,
+                //         backgroundColor: 'royalblue',
+                //         margin: '50px auto',
+                //     });
+                // } else if(ww < 760) {
+                //     $('#box').css({
+                //         width: ww*0.1,
+                //         height: 100,
+                //         backgroundColor: 'teal',
+                //         margin: '50px auto',
+                //     });
+                // }
+                
+                // function resizeLayout() {
+
+                //     let ww = $(window).width();
+                    
+                //     if(ww >= 1200) {
+                //         $('#box').css({
+                //             width: 1200,
+                //             height:500,
+                //             backgroundColor: 'lightblue',
+                //             margin: '50px auto',
+                //         });
+                //     } else if(ww >= 960 && ww < 1200) {
+                //         $('#box').css({
+                //             width: 960,
+                //             height: 800,
+                //             backgroundColor: 'lightgreen',
+                //             margin: '50px auto',
+                //         });
+                //     } else if(ww >= 760 && ww < 960) {
+                //         $('#box').css({
+                //             width: 760,
+                //             height: 200,
+                //             backgroundColor: 'royalblue',
+                //             margin: '50px auto',
+                //         });
+                //     } else if(ww < 760) {
+                //         $('#box').css({
+                //             width: ww*0.1,
+                //             height: 100,
+                //             backgroundColor: 'teal',
+                //             margin: '50px auto',
+                //         });
+                //     }
+                // }
+
+                // resizeLayout();
+
+
+                // $(window).resize(function() {
+                //     ww = $(window).width();
+                    
+                //     if(ww >= 1200) {
+                //         $('#box').css({
+                //             width: 1200,
+                //             height:500,
+                //             backgroundColor: 'lightblue',
+                //             margin: '50px auto',
+                //         });
+                //     } else if(ww >= 960 && ww < 1200) {
+                //         $('#box').css({
+                //             width: 960,
+                //             height: 800,
+                //             backgroundColor: 'lightgreen',
+                //             margin: '50px auto',
+                //         });
+                //     } else if(ww >= 760 && ww < 960) {
+                //         $('#box').css({
+                //             width: 760,
+                //             height: 200,
+                //             backgroundColor: 'royalblue',
+                //             margin: '50px auto',
+                //         });
+                //     } else if(ww < 760) {
+                //         $('#box').css({
+                //             width: ww*0.1,
+                //             height: 100,
+                //             backgroundColor: 'teal',
+                //             margin: '50px auto',
+                //         });
+                //     }
+                // }); //resize end
+
+                // $(window).resize(function() {
+                //     ww = $(window).width();
+                //     resizeLayout(); //중복 방지
+                // }); //resize end
+
+                //문제
+                function layout() {
+                    let ww  = $(window).width();
+                    let wh = $(window).height();
+
+                    let boxW = ww * 0.5;
+                    let boxH = wh * 0.5;
+
+                    $('#box').css({
+                        width: boxW,
+                        height: boxH,
+                        backgroundColor : 'lightblue',
+                        position: 'absolute',
+                        top : '50%',
+                        left: '50%',
+                        marginTop : -(boxH / 2),
+                        marginLeft : -(boxW / 2),
+                    }); 
+                }
+
+                layout(); //밖에 함수 실행
+
+                $(window).resize(function() {
+                    let ww  = $(window).width();
+                    let wh = $(window).height();
+
+                    let boxW = ww * 0.5;
+                    let boxH = wh * 0.5;
+
+                    layout();
+                }); 
+
+
+
+
+            }); //end
+
+
+
+        </script>
+    </body>
+</html>
+
+
+<!--  
+    <resize>
+    => 브라우저 크기값이 변경이 될 때 사이즈를 재수정해서 로딩
+    => 리사이즈 실행문에서 재수정될 사이즈들은 리사이즈 밖에도 코드가 적혀있어야함.
+    => $('선택자').resize(function() {
+        //code..
+    });
+
+    문제)
+    => id 박스 1개 생성
+    => 처음 배경색 하늘색
+    => 브라우저 가로/세로 크기가 바뀔 때마다
+    박스 가로 = 윈도우 가로값의 50%
+    박스 세로 = 윈도우 세로값의 50%
+    로 자동 변경
+    => 박스는 항상 가운데 정렬
+
+
+
+
+    문제
+    wrap 크기 ww*0.8 x ww*0.5         
+    arrow 크기 ww*0.1 x ww*0.1
+    슬라이드 이미지 3개
+    2초마다 자동으로 오른쪽버튼 클릭해서 이미지 슬라이드
+    리사이즈 작성
+
+-->

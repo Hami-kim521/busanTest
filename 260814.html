@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>if(조건문)</title>
+    </head>
+    <body>
+        
+
+
+
+        <script>
+            // let num1 = Number(prompt('첫번째 숫자를 입력하세요.'));
+            // let num2 = Number(prompt('두번째 숫자를 입력하세요.'));
+
+            // let sum = num1 + num2;
+            // let avg = sum / 2;
+
+            // document.write(`합계 : ${sum}`);
+            // document.write(`<br/> 평균 : ${avg}`);
+
+            // let price = Number(prompt('가격을 입력하세요.'));
+            // let count = Number(prompt('구매할 개수을 입력하세요.'));
+            // let total = price * count;
+
+            // document.write(`가격 : ${price}원 <br/>`);
+            // //document.write('가격 :' + price + '원<br/>');
+            // document.write(`개수 : ${count}개 <br/>`);
+            // document.write(`총 가격 : ${total}원`);
+
+            // let width = Number(prompt('가로 값을 입력하세요'));
+            // let height = Number(prompt('세로 값을 입력하세요'));
+            // let area = width * height;
+            // let perimeter = (width + height) * 2;
+
+            // document.write(`넓이 : ${area} <br/>`);
+            // document.write(`둘레 : ${perimeter}`);
+
+            // let num1 = Number(prompt('첫번째 숫자를 입력하세요.'));
+            // let num2 = Number(prompt('두번째 숫자를 입력하세요.'));
+
+            // if(num1 > num2) {
+            //     console.log(`${num1}이 큽니다.`);
+            // } else if(num1 < num2) {
+            //     console.log(`${num2}가 큽니다.`);
+            // } else {
+            //     console.log(`${num1}과 ${num2}가 같습니다.`);
+            // }
+
+
+            // let num = Number(prompt('숫자를 입력하세요.'));
+
+            // if(num % 2 === 0) {
+            //     document.write('짝수');
+            // } else {
+            //     document.write('홀수');
+            // }
+
+            // let walk = Number(prompt('오늘 하루 몇 걸음을 걸으셨습니까?'));
+
+            // if(walk >= 10000) {
+            //     document.write('만보라니! 건강하시네요!');
+            // } else if(walk >= 5000) {
+            //     document.write('조금 더 움직여볼까요?');
+            // } else{
+            //     document.write('운동이 시급합니다.');
+            // } 
+
+            // let score = Number(prompt('0-100사이의 숫자를 입력하세요.'));
+
+            // if(score >= 90) {
+            //     document.write(`점수 : ${score} -> 학점 : A`);
+            // } else if(score >= 80) {
+            //     document.write(`점수 : ${score} -> 학점 : B`);
+            // } else if(score >= 70) {
+            //     document.write(`점수 : ${score} -> 학점 : C`);
+            // } else if(score >= 60) {
+            //     document.write(`점수 : ${score} -> 학점 : D`);
+            // } else {
+            //     document.write(`점수 : ${score} -> 학점 : F`);
+            // }
+
+            // let number = Number(prompt('숫자를 입력하세요.'));
+
+            // switch(number % 2) {
+            //     case 0 :
+            //         console.log('짝수');
+            //         break;
+            //     case 1 : 
+            //         console.log('홀수');
+            //         break;
+            //     default : 
+            //         console.log('처리할 수 없는 값');
+            //         break;
+            // }
+
+
+        //    let fruit = prompt('과일을 입력하세요.');
+           
+        //    switch(fruit) {
+        //         case '사과' :
+        //             console.log('사과입니다.');
+        //             break;
+        //         case '배' :
+        //             console.log('배입니다.');
+        //             break;
+        //         case '복숭아' :
+        //             console.log('복숭아입니다.');
+        //             break;
+        //         case '수박' :
+        //             console.log('수박입니다.');
+        //             break;
+        //         default: 
+        //             console.log(`${fruit}입니다.`);
+        //             break;
+        //    }
+
+
+            let number = Number(prompt('숫자를 입력하세요.'));
+
+            number % 2 === 0 ? console.log('짝수') : console.log('홀수');
+
+
+
+
+
+
+
+        </script>
+    </body>
+</html>
+
+
+<!-- 
+    문제1)
+    두 수를 입력을 받아서 두 수의 합계와 평균을 웹페이지에 출력
+
+    합계 : 
+    평균 : 
+
+    문제2)
+    물건의 가격과 구매 개수를 입력받아, 물건의 가격, 구매 개수, 총 가격을 웹페이지에 출력
+
+    가격 : ~원
+    구매 개수 : ~개 
+    총 가격 : ~원
+
+    문제3)
+    사각형의 가로, 세로 길이를 입력받아 넓이와 둘레를 웹페이지에 출력
+    
+    넓이 : 
+    둘레 :
+
+
+    <조건문>
+    조건을 만족하는 데이터를 실행하고 처리할 때
+
+    1) if문(비교하거나 논리조건을 따질 때, 비교대상이 하나의 값이 아니라 조건식 일 때 주로 사용)
+
+    - if(조건1) {
+        조건1이 만족을 했을 때 실행될 코드
+    } else {
+        조건1이 거짓일 때 실행될 코드
+    }
+
+    - if(조건1) {
+        조건1이 만족을 했을 때 실행될 코드
+    } else if(조건2) {
+        조건1은 거짓이고 / 조건2가 만족을 했을 때 실행될 코드 
+    } else {
+        조건1, 2 둘 다 거짓일 때 
+    }   
+
+    - 삼항 연산자(3개의 피연산자를 사용하는 연산자)
+    => if문의 단축형태
+    => 조건식 ? true일 경우 실행할 코드 : 거짓일 때 실행할 코드
+
+    if(number % 2 === 0) {
+        console.log('짝수');
+    } else {
+        console.log('홀수');
+    }
+
+    => 삼항연산자로 바꾸면?
+
+    number % 2 === 0 ? console.log('짝수') : console.log('홀수');
+
+
+    문제)
+    홀수인지 짝수인지 판별하는 조건문
+    
+    숫자는 입력받아서 가져오기
+
+    수가 짝수라면 웹페이지에 짝수 출력
+        홀수라면 웹페이지에 홀수 출력
+    
+
+
+    문제)
+    학점 계산
+    
+    숫자(0~100)입력 받아오고, 90점 이상 A, 80점 이상 B, 70점 이상 C, 60점 이상 D, 나머지는 F
+
+    웹페이지에 '점수 : 점수 -> 학점 : '
+
+
+
+    2) switch : 하나의 변수가 정해진 여러 값 중에서 하나와 일치하는지 검사할 때
+
+    switch(조건) {
+        case :
+            처리1;
+            break;
+        case : 
+            처리2;
+            break;
+        .
+        .
+        .
+
+        default : 
+            처리3;
+            break;
+    }
+
+
+
+
+
+
+
+
+
+-->

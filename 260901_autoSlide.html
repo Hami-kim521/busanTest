@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>자동 슬라이드</title>
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+            }
+
+            /* img {
+                display: block;
+                border: 0;
+            }
+
+            #wrap {
+                width:800px;
+                height: 400px;
+                border: 10px solid black;
+                margin: 50px auto;
+                position: relative;
+                overflow: hidden;
+            }
+
+            #img_wrap {
+                width: 2400px;
+                height: 400px;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+
+            #img_wrap img{
+                width: 800px;
+                height: 400px;
+                float: left;
+            }
+
+
+            .arrow {
+                width: 50px;
+                height: 50px;
+                background-color: white;
+                position: absolute;
+                top: 50%;
+                margin-top: -25px;
+                text-align: center;
+                line-height: 50px;
+                display: none;
+            }
+
+            #left {
+                left: 0;
+            }
+
+            #right {
+                right: 0;
+            } */
+
+
+            #number {
+                width: 150px;
+                height: 150px;
+                background-color: black;
+                color: white;
+                border-radius: 50%;
+                text-align: center;
+                font: 900 50px / 150px '';
+                margin: 50px auto;
+            }
+
+        </style>
+        <script src="jquery.js"></script>
+    </head>
+    <body>
+        
+        <!-- <div id="box"></div> -->
+
+
+        <!-- <div id="wrap">
+            <div id="img_wrap">   
+                <img src="alpacca.jpg" alt="알파카">
+                <img src="capybara.jpg" alt="카피바라">
+                <img src="quokka.jpg" alt="쿼카">
+            </div>
+            
+
+            <div class="arrow" id="left">&#60;</div>
+            <div class="arrow" id="right">&#62;</div>
+        </div> -->
+
+
+        <div id="number">0</div>
+
+
+
+        <script>
+            $(document).ready(function() {
+                // let sto = setTimeout(function() {
+                //     document.write('지정한 시간 이후 한번만 실행 <br/>');
+                // }, 3000);
+
+                // let siv = setInterval(function() {
+                //     document.write('지정한 시간 간격으로 계속 실행 <br/>');
+                // }, 1000);
+
+                // setTimeout(function() {
+                //     clearInterval(siv);
+                // }, 5000);
+
+
+                // let num = 1;
+
+                // let si = setInterval(function() {
+                //     document.write(`<h1>${num}</h1>`);
+                //     num++;
+                // }, 1000);
+
+                // setTimeout(function() {
+                //     clearInterval(si);
+                // }, 10000);
+
+
+                // $('#box').css({
+                //     width: 300,
+                //     height: 300,
+                //     backgroundColor: 'skyblue',
+                //     transition: '0.5s',
+                // });
+
+                // let i = 0;
+
+                // $('#box').click(function() {
+                //     if(i === 0){
+                //         $(this).css({
+                //             backgroundColor: 'skyblue',
+                //         });
+                //         i++;
+                //     } else if(i === 1) {
+                //         $(this).css({
+                //             backgroundColor: 'gold',
+                //         });
+                //         i = 0;
+                //     }
+                // });
+
+                // let si = setInterval(function() {
+                //     $('#box').trigger('click');
+                // }, 1000);
+
+                // setTimeout(function() {
+                //     clearInterval(si);
+                // }, 10000);
+
+
+
+                // let i = 0;
+
+                // $('#right').click(function() {
+                //     i++;
+                //     if(i > 2) {
+                //         i = 0;
+                //     }
+
+                //     $('#img_wrap').animate({
+                //         left: -800 * i,
+                //     });
+                // });
+
+
+                // //3초 간격으로 이미지가 자동으로 클릭되서 다음 이미지가 나옴
+                // setInterval(function() {   
+                //     $('#right').trigger('click');
+                // }, 3000);
+
+
+                let num = 0;
+
+                let countNumber = setInterval(function() {
+                    num++;
+
+                    if(num > 99) {
+                        clearInterval(countNumber);
+                    } else {
+                        $('#number').text(num);
+                    }
+                }, 100);
+
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            });
+
+
+
+
+
+        </script>
+    </body>
+</html>
+
+
+
+<!-- 
+    <타이머 함수>
+    1. 브라우저 로드시 지정한 시간 이후 한번만 실행되는 타이머 함수
+
+    => setTimeout(function() {
+        //code
+    }, 시간); 
+
+    clearTimeout(id); => setTimeout 함수 삭제
+
+
+    2. 브라우저 로드시 지정한 시간 이후 마다 계속 실행되는 타이머 함수(지정한 시간 간격마다)
+
+    => setInterval(function() {
+        //code
+    }, 시간);
+
+    clearInterval(id) => setInterval 함수 삭제
+
+
+    .trigger() : 사용자가 이벤트를 실행하는 것처럼 이벤트를 강제로 실행
+    $('선택자').trigger('명령')
+
+
+
+
+
+
+
+
+-->

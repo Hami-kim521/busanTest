@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="jquery.js"></script> 
+        <!-- 제이쿼리는 무조건 cdn 연결해서 사용 -->
+    </head>
+    <body>
+        
+        <!-- <div id="box">box</div> -->
+
+        <!-- <div>1</div>
+        <div>2</div>
+        <div>3</div> -->
+
+        <!-- <div id="box">4</div> -->
+
+
+        <div class="score s1"></div>
+        <div class="score s2"></div>
+        <div class="score s3"></div>
+        <div class="score s4"></div>
+        <div class="score s5"></div>
+
+
+        <script>
+            $(document).ready(function() {
+                // $('#box').css({
+                //     width: 100,
+                //     height: 100,
+                //     backgroundColor: '#eee',
+                //     textAlign: 'center',
+                //     lineHeight: '100px',
+                // });
+
+                // $('div').css({
+                //     width: 200,
+                //     height: 200,
+                //     margin: '50px auto',
+                //     lineHeight: '200px',
+                //     textAlign: 'center',
+                //     fontSize: '100px',
+                // });
+
+                // $('div:nth-child(1)').css({
+                //     backgroundColor: 'tomato',
+                // });
+
+                // $('div:nth-child(2)').css({
+                //     backgroundColor: 'gold',
+                // });
+
+                // $('div:nth-child(3)').css({
+                //     backgroundColor: 'skyblue',
+                // });
+                
+                
+
+                //객체크기를 변수로 담을 때
+                /*
+                    let 변수명 = $('가로값으로 가져올 선택자').width();
+                    let 변수명 = $('세로값으로 가져올 선택자').height();
+                */
+                // let div_w = $('div').width(); //선택자의 width 값을 변수에 담음
+                // let div_h = $('div').height(); //선택자의 height값을 변수에 담음
+
+                // $('#box').css({
+                //     width : div_w + 600, //800
+                //     height: div_h - 50, //150
+                //     backgroundColor : 'royalblue',
+                //     fontSize : '50px',
+                //     textAlign: 'center',
+                //     lineHeight : (div_h - 50) + 'px',
+                // });
+
+                //스코어 표시 예제
+                $('.score').css({
+                    width: 100,
+                    height: 100,
+                    borderRadius : '50%',
+                    backgroundColor: 'lightgrey',
+                    margin: 10,
+                    float: 'left',
+                });
+
+                let scoreInput = Number(prompt('점수를 숫자로 입력해주세요. ex) 1~5'));
+
+                for(let i = 1; i <= scoreInput; i++) {
+                    $('.s' + i).css({
+                        backgroundColor: 'gold',
+                    });
+                }
+
+
+            }); //end
+
+            
+
+
+
+        </script>
+
+        <!-- <script src="index.js"></script> -->
+    </body>
+</html>
+
+<!-- 
+    <제이쿼리 사용 순서>
+    1. 웹사이트에 제이쿼리 cdn 검색
+    2. 제이쿼리 cdn 사이트 들어가서 최신버전(맨 위에 있는) 중에 minified로 선택
+    3. 스크립트 태그 안에 src 링크를 복사해서 새 탭에서 열기
+    4. 코드 전체 선택해서(ctrl+a) 복사해서 VScode 열어서 js파일 하나 만들기
+    5. 복사한 코드 붙여넣기하고 저장
+    6. title 태그 밑에 script 태그만들고 src 속성 입력하고 jquery 파일 연결하기
+
+    **참고사항
+    1. 외부(웹사이트 등)에서 불러오거나 연결하는 파일들(css, js)은 무조건 head태그 안에 있어야 함
+    2. 내가 작성한 스크립트 코드의 경우는 닫히는 body태그에 script태그가 있어야 하고, 만약 폴더 내에 내가 만든 js파일을 연결할거면
+    닫히는 body태그에 <script src="파일이름.js"></script> 이렇게 입력되어 있어야 함.
+
+    <제이쿼리>
+    자바스크립트에서 여러 명령을 함수화시켜 만들어진 라이브러리 형태의 언어(괄호 주의!!!!!!)
+
+    $(document).ready(function() {
+        //웹문서가 로딩이 다 되면 실행될 코드
+    });
+
+    - 선택자
+    => 아이디 => #id 
+    => 클래스 => .class
+    => 구조선택자 => nth-child(), first-child, last-child
+    => 태그선택자 => body, div, h1~h6, header, section, ...
+
+    css에서는
+
+    #name {
+        color: white;
+        font: 900 50px /100px '';
+    }
+
+    jquery에서는
+    
+    $('#아이디명').명령({
+        //속성
+    });
+
+    $('.클래스명').명령({
+        //속성
+    });
+
+    $('선택자:nth-child(n)').명령({
+        //속성
+    });
+
+    ex) <div id="name"></div>
+
+    css코드를 jquery로 작성할 시 css는 명령으로 들어옴
+
+    ex)
+
+    $('#name').css({
+        width: 100 + 'px',
+        width: '100px',
+        width : 100, //단위가 없으면 무조건 px 단위, %, em, rem, vw, vh 등의 경우는 숫자만 적으면 안됨.
+    });
+
+
+    문제)
+
+    div 스타일 (3개)
+    => 200*200
+    => 상하여백 50px, 가운데 정렬
+    => 텍스트 크기 100px
+    => 텍스트 가로세로 중앙정렬
+
+    => 배경색 순서대로 빨강, 초록, 파랑 
+    (id,class값은 지정안함)
+
+
+    문제)
+    별점 스코어 표시
+    => 100*100 원형 5개 점수 표시
+    => 가로정렬, 간격 10px
+    => 컬러 그레이 / 노랑
+
+    => 1~5점 점수를 입력받아 스코어에 표시
+    => 입력변수와 반복문 활용
+
+-->

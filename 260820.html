@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        
+
+
+
+        <script>
+            // let numbers = [1, 2, 3, 4, 5, 6];
+            // let evenCount = 0;
+
+            // for(let i = 0; i < numbers.length; i++) {
+            //     if(numbers[i] % 2 === 0) {
+            //         evenCount++;
+            //     }
+            // }
+
+            // console.log(evenCount);
+
+
+
+            // let scores = [45, 78, 60, 92, 55, 30];
+            // let passCount = 0;
+            // let failCount = 0;
+
+            // for(let i = 0; i < scores.length;i++) {
+            //     if(scores[i] >= 60) {
+            //         passCount++;
+            //     } else {
+                    
+            //         failCount++;
+            //     }
+            // }
+
+            // console.log(`합격자 수 : ${passCount}, 불합격자 수: ${failCount}`);
+
+            // let scores = [45, 78, 60, 92, 55, 30];
+            // let passCount = [];
+            // let failCount = [];
+
+            // for(let i = 0; i < scores.length; i++) {
+            //     if(scores[i] >= 60) {
+            //         passCount.push(scores[i]); //[78, 60, 92];
+            //         //배열의 마지막 위치에 추가
+            //         //passCount.unshift() : 배열의 첫번째 위치에 추가
+            //     } else {
+            //         failCount.push(scores[i]); //[45, 55, 30];
+            //     }
+            // }
+
+            // console.log(`합격자 수 : ${passCount.length}, 불합격자 수: ${failCount.length}`);
+
+
+            function makeFriedRice(main) {
+                console.log(`${main}볶음밥`);
+            }
+
+
+            makeFriedRice('새우');
+            makeFriedRice('계란');
+            makeFriedRice('김치');
+            makeFriedRice('파인애플');
+
+
+            function calculateNumber(a, b){
+                console.log(a + b);
+            }
+
+
+            calculateNumber(99, 111111111);
+
+            
+
+            function timesTables() {
+                for(let i = 2; i < 10; i++) {
+                    document.write(`<h1>${i}단</h1>`);
+                    for(let j = 1; j < 10; j++) {
+                        document.write(`<div>${i}X${j}=${i*j}</div>`);
+                    }
+                }
+            }
+
+            timesTables();
+
+
+
+
+
+        </script>
+    </body>
+</html>
+
+
+
+
+<!-- 
+    문제)
+    let numbers = [1, 2, 3, 4, 5, 6];
+    배열에서 짝수의 갯수를 세어 콘솔창에 출력
+
+    문제)
+    let scores = [45, 78, 60, 92, 55, 30];
+    점수 배열에서 60점 이상이면 합격, 미만이면 불합격으로 분류
+    => 합격자 수와 불합격자 수를 각각 콘솔창에 출력
+
+    <함수>
+    일련의 과정을 구문(statement)으로 구현하고 코드 블럭으로 감싸서 하나의 실행 단위로 정의한 것
+    => 하나의 동작, 어떤 목적을 달성하거나 원하는 결과를 도출하기 위한 코드 집합
+    => 한 번만 쓰는게 아니라 반복적인 동작을 처리하기 위해 사용
+    => 같은 이름으로 재사용
+
+    1. 기능을 적절하게 표현하는 이름
+    2. 명사보다는 동사로 된 이름
+    3. 소문자로 시작하되 여러 단어가 섞인 경우 카멜 표기법 사용
+    ex) sayHello, numberListing
+
+    - 매개변수 : 함수 내부로 입력을 전달받는 변수, 함수의 정의에서 사용되는 변수
+    - 인자, 인수 : 함수에서 정의된 일련의 과정을 실행하기 위해서 필요한 값, 매개변수에 할당되는 값
+    - 반환값 : 함수의 실행 결과 값
+
+
+    <함수를 표현하는 방법>
+
+    - 선언식
+
+    function 함수명(매개변수) {
+        함수의 기능을 표현한 코드
+    }
+
+    함수명(인자, 인수); => 함수 호출
+
+    ------------------------------------
+
+    - 표현식
+
+    const 함수명 = function(매개변수) {
+        함수의 기능을 표현한 코드
+    }
+
+    함수명(인자, 인수);
+
+    ------------------------------------
+
+    - 화살표 함수
+
+    const 함수명 = (매개변수) => {
+        함수의 기능을 표현한 코드
+    }
+
+    함수명(인자, 인수);
+
+
+    함수 문제)
+    구구단 만들기 함수
+
+
+
+
+
+
+-->

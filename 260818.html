@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+
+
+
+
+
+        <script>
+            // let age = Number(prompt('나이를 입력하세요. ex) 12'));
+            // let height = Number (prompt('키를 입력하세요. ex) 140'));
+
+            // if(age >= 12 && height >= 140) {
+            //     console.log('탑승 가능');
+            // } else {
+            //     console.log('탑승 불가');
+            // }
+
+            //age >= 12 && height >= 140 ? console.log('탑승 가능') : console.log('탑승 불가');
+
+            // let result = (age >= 12 && height >= 140) ? '탑승 가능' : '탑승 불가';
+
+            // console.log(result);
+
+            // console.log((age >= 12 && height >= 140) ? '탑승 가능' : '탑승 불가');
+
+            // for문
+            // console.log(1);
+            // console.log(2);
+            // console.log(3);
+            // console.log(4);
+
+            // for(let i = 0; i < 5; i++) {
+            //     console.log(i);
+            // }
+
+            // 1~100
+            // for(let i = 1; i <= 100; i++) {
+            //     document.write(`${i} <br/>`);
+            // }
+
+            //100~1
+            // for(let i = 100; i >= 1; i--) {
+            //     document.write(`${i} <br/>`);
+            // }
+
+
+            // for(let i = 1; i <= 100; i++) {
+            //     if(i % 2 === 0) {
+            //         document.write(`${i} <br/>`);
+            //     }
+            // }
+
+            // for(let i = 1; i <= 50; i++) {
+            //     document.write(`${i*2} <br/>`);
+            // }
+
+            //x += y => x = x + y
+            // for(let i = 2; i <= 100; i+=2) {
+            //     document.write(`${i} <br/>`);
+            // }
+            
+
+            /*
+                부모 i를 1~5이상 까지 1씩 증가 출력
+                자식 j를 6~8이하 까지 1씩 증가 출력
+                중첩 for문의 경우 부모가 코드가 종료가 되어야 반복문 끝남
+            */
+            // for(let i = 1; i <= 5; i++) {
+            //     document.write(`<h1> ${i} </h1>`);
+
+            //     for(let j = 6; j <= 8; j++) {
+            //         document.write(`${j} <br/>`);
+            //     }
+            // }
+
+            //구구단 만들기 문제 풀이
+            for(let i = 2; i < 10; i++) {
+                document.write(`<h1> ${i}단 </h1>`);
+                for(let j = 1; j < 10; j++){
+                    document.write(`${i}X${j}=${i*j} <br/>`);
+                }
+            }
+
+
+
+
+        </script>
+    </body>
+</html>
+
+
+<!--
+
+    문제)
+    나이랑, 키를 입력값을 받아오고
+    나이가 12살 이상이고, 키가 140cm 이상이면 '탑승 가능', 아니면 '탑승 불가'를 콘솔에 출력하세요.
+
+
+    <반복문>
+    for, while
+
+    1) 
+    for(초기값; 반복문 조건; 코드 실행 후 작업) {
+        반복적으로 처리할 코드; 조건이 true일 경우 반복적으로 실행
+    }
+
+    초기값 : 기준을 잡을 변수를 선언;
+    반복문 조건 : 언제까지 for문을 실행시킬건지;
+    코드를 실행 후 작업 : 증감연산자; for문이 한번씩 실행될때마다 어떤 행동을 취할건지
+
+    문제)
+    1~100까지의 숫자를 웹문서에 출력
+
+    문제)
+    1~100까지의 숫자 중에서 짝수만 웹문서에 출력
+
+
+    <중첩 for문>
+    => 부모 for문이 한 번 출력될 때 자식 for문이 한 사이클 실행
+
+    for(let i = 0; i < 5; i++) {
+        for(let j = 1; j < 6; j++) {
+            console.log(i * j);
+        }
+    }
+
+    문제) 구구단 만들기
+    웹문서에 2단~9단까지 출력
+
+    <2단>
+    2X1=2
+    2X2=4
+    .
+    .
+    .
+    2X9=18
+
+    <9단>
+    9X1=9
+    .
+    .
+    .
+    9X9=81
+
+
+-->

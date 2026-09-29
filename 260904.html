@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+
+            ul, li {
+                list-style: none;
+            }
+
+            #wrap {
+                width: 600px;
+                height: 700px;
+                border: 10px solid black;
+                margin: 50px auto;
+                text-align: center;
+            }
+
+            #menu_wrap {
+                width: 100%;
+                height: 100px;
+                position: relative;
+            }
+
+            #menu_wrap li {
+                width: 25%;
+                height: 100%;
+                float: left;
+                font: 30px / 100px '';
+            }
+
+            #box_wrap {
+                width: 100%;
+                height: 600px;
+                position: relative;
+            }
+
+            #box_wrap li {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                font: 100px / 600px '';
+                display: none;
+            }
+
+        </style>
+        <script src="jquery.js"></script>
+    </head>
+    <body>
+
+        <div id="wrap">
+             <ul id="menu_wrap">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+            <ul id="box_wrap">
+                <li>첫번째</li>
+                <li>두번째</li>
+                <li>세번째</li>
+                <li>네번째</li>
+            </ul>
+        </div>
+       
+
+
+
+
+
+
+        <script>
+            $(document).ready(function() {
+                
+                let bg = ['gold', 'tomato', 'lightgreen', 'royalblue'];
+
+                $('#box_wrap li').css({
+                    backgroundColor :function(index) {
+                        return bg[index];
+                    }
+                }).first().css({
+                    display: 'block',
+                });
+
+
+                $('#menu_wrap li').css({
+                    backgroundColor :function(index) {
+                        return bg[index];
+                    }
+                }).click(function() {
+                    let i = $(this).index(); //선택자의 인덱스 속성 $('선택자').index();
+
+                    $('#box_wrap li').fadeOut(1000);
+                    $('#box_wrap li').eq(i).slideDown(1000);
+
+                });
+
+            }); //end
+
+
+
+        </script>
+    </body>
+</html>
+
+<!-- 
+    문제)
+    css
+    wrap 크기 600*700, 테두리, 중앙정렬
+    메뉴 4개 생성, 세로 100px 
+    박스 4개 생성, 세로 600px
+
+    script
+    각 메뉴와 박스 배경색 배열값 반환
+    각 메뉴 클릭시 메뉴순서에 맞는 박스가 위에서 아래로 나타남(1s)
+    ex) 메뉴 1번 클릭시 1번째 박스 등장, 
+        메뉴 2번 클릭시 2번째 박스 나오고 1번 박스 서서히 사라짐
+
+
+    문제)
+    css 
+    wrap 크기 600*400
+    btn_wrap 크기 250*50, 아래여백 20px
+    btn 크기 40*40, 각 버튼 여백 5px 
+    
+    script
+    각 버튼 순서값 지정
+    버튼 클릭시 이미지가 가로 기준으로 
+    버튼 순서에 맞게 이동
+
+    btn_wrap안에 li의 순서값에 반응해서 
+    img_wrap이 왼쪽으로 600px만큼 이동 (변수와 이동값을 연동)
+
+
+
+-->

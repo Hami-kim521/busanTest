@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>슬라이드 배너</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            img {
+                display: block;
+                border: 0;
+            }
+
+            /* #wrap {
+                width: 600px;
+                height: 400px;
+                border: 10px solid black;
+                margin: 100px auto;
+                overflow: hidden;
+                position: relative;
+            }
+
+            #img_wrap {
+                width: 3000px;
+                height: 400px;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+
+            #img_wrap img {
+                width: 600px;
+                height: 100%;
+                float: left;
+            }
+
+            .arrow {
+                width: 50px;
+                height: 50px;
+                background-color: white;
+                position: absolute;
+                top: 50%;
+                margin-top: -25px;
+                text-align: center;
+                line-height: 50px;
+                cursor: pointer;
+            }
+
+            #left {
+                left: 0;
+            }
+
+            #right {
+                right: 0;
+            } */
+
+
+            #wrap {
+                width: 600px;
+                height: 400px;
+                border: 10px solid black;
+                margin: 100px auto;
+                overflow: hidden;
+                position: relative;
+            }
+
+            #img_wrap {
+                width: 600px;
+                height: 2000px;
+                position: absolute;
+            }
+
+            #img_wrap img {
+                width: 600px;
+                height: 400px;
+            }
+
+            .arrow {
+                width: 600px;
+                height: 50px;
+                background-color: rgba(255, 255, 255, 0.6);
+                position: absolute;
+                text-align: center;
+                cursor: pointer;
+                font: bold 30px / 50px '';
+            }
+
+            #top {
+                top: 0;
+            }
+
+            #bottom {
+                bottom: 0;
+            }
+
+
+
+        </style>
+        <script src="jquery.js"></script>
+    </head>
+    <body>
+        <!-- <div id="wrap">
+            <div id="img_wrap">
+                <img src="quokka.jpg" alt="쿼카">
+                <img src="hippo.jpg" alt="하마">
+                <img src="capybara.jpg" alt="카피바라">
+                <img src="miniPig.jpg" alt="미니 피그">
+                <img src="alpacca.jpg" alt="알파카">
+            </div>
+
+            <div class="arrow" id="left">&lt;</div>
+            <div class="arrow" id="right">&gt;</div>
+        </div> -->
+
+        <div id="wrap">
+            <div id="img_wrap">
+                <img src="quokka.jpg" alt="쿼카">
+                <img src="hippo.jpg" alt="하마">
+                <img src="capybara.jpg" alt="카피바라">
+                <img src="miniPig.jpg" alt="미니 피그">
+                <img src="alpacca.jpg" alt="알파카">
+            </div>
+
+            <div class="arrow" id="top">위로</div>
+            <div class="arrow" id="bottom">아래로</div>
+        </div>
+        
+
+
+
+
+        <script>
+            $(document).ready(function() {
+                /*
+                    오른쪽 버튼 클릭시
+                    img_wrap 클릭하는 횟수값에 따라 이미지의 가로 너비만큼 왼쪽 이동
+                    img_wrap 좌표변화
+                    click_num 변수를 지정, 0으로 시작 1씩 증가
+                    증가된 click_num의 값당 600px씩 이동
+                    
+                    왼쪽 버튼 클릭시
+                    img_wrap 클릭하는 횟수값에 따라 이미지의 가로 너비만큼 오른쪽 이동
+                    img_wrap 좌표변화
+                    click_num 변수를 지정, 0으로 시작 1씩 감소
+                    감소된 click_num의 값당 600px씩 이동
+                */
+
+
+                //let click_num = 0; 
+                // $('#right').click(function() {
+                //     if(click_num === 0) {
+                //         $('#img_wrap').animate({
+                //             left: -600,
+                //         });
+                //         click_num++;
+                //     } else if(click_num === 1) {
+                //         $('#img_wrap').animate({
+                //             left: -1200,
+                //         });
+                //         click_num++;
+                //     } else if(click_num === 2) {
+                //         $('#img_wrap').animate({
+                //             left: -1800,
+                //         });
+                //         click_num++;
+                //     } else if(click_num === 3) {
+                //         $('#img_wrap').animate({
+                //             left: -2400,
+                //         });
+                //         click_num++;
+                //     } else if(click_num === 4) {
+                //         $('#img_wrap').animate({
+                //             left: 0,
+                //         });
+                //         click_num = 0;
+                //     }
+                // });
+
+
+                // $('#left').click(function() {
+                //     click_num--;
+
+                //     if(click_num < 0) {
+                //         click_num = 4;
+                //     }
+                //     //첫번째 이미지에서 왼쪽버튼을 눌렀을 때 마지막 이미지가 나오는 코드 처리
+
+                //     $('#img_wrap').animate({
+                //         left : -600 * click_num,
+                //     });
+                // });
+
+
+                // $('#right').click(function() {
+                //     click_num++;
+
+                //     if(click_num > 4) {
+                //         click_num = 0;
+                //     }
+                //     //마지막 이미지에서 오른쪽버튼을 눌렀을 때 첫번째 이미지가 나오는 코드 처리
+
+                //     $('#img_wrap').animate({
+                //         left : -600 * click_num,
+                //     });
+                // });
+
+                let click_num = 0; 
+                $('#top').click(function() {
+                    click_num--;
+
+                    if(click_num < 0) {
+                        click_num = 4;
+                    }
+                    //첫번째 이미지에서 위로 버튼을 눌렀을 때 마지막 이미지가 나오는 코드 처리
+
+                    $('#img_wrap').animate({
+                        top : -400 * click_num,
+                    });
+                });
+
+
+                $('#bottom').click(function() {
+                    click_num++;
+
+                    if(click_num > 4) {
+                        click_num = 0;
+                    }
+                    //마지막 이미지에서 아래로 버튼을 눌렀을 때  첫번째 이미지가 나오는 코드 처리
+
+                    $('#img_wrap').animate({
+                        top : -400 * click_num,
+                    });
+                });
+
+
+            }); //end
+
+
+
+        </script>
+    </body>
+</html>
+
+
+<!-- 
+    문제)
+    마스크 크기 600*400, 10px테두리, 중앙정렬
+    버튼 크기 600*50, 투명도 60%, 텍스트 정렬
+    클릭시 버튼방향의 다음 이미지 노출
+
+
+
+
+
+-->

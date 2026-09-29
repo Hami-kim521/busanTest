@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            * {
+                padding: 0;
+                margin: 0;
+            }
+
+            header {
+                width: 100%;
+                height: 100px;
+                background-color: rgba(255, 255, 255, 0.7);
+                position: fixed;
+                top: 0;
+                left: 0;
+            }
+
+            .menu {
+                width: 25%;
+                height: 100%;
+                float: left;
+                text-align: center;
+                font: 30px / 100px '';
+                cursor: pointer;
+            }
+
+            .active {
+                color: white;
+                background-color: dimgrey;
+            }
+
+        </style>
+        <script src="jquery.js"></script>
+    </head>
+    <body>
+
+        <div id="wrap">
+            <header>
+                <div class="menu active">1</div>
+                <div class="menu">2</div>
+                <div class="menu">3</div>
+                <div class="menu">4</div>
+            </header>
+
+            <div id="contents">
+                <div class="con">컨텐츠1</div>
+                <div class="con">컨텐츠2</div>
+                <div class="con">컨텐츠3</div>
+                <div class="con">컨텐츠4</div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <script>
+            $(document).ready(function() {
+                let bg = ['lightblue', 'skyblue', 'royalblue', 'deepskyblue'];
+                let ww = $(window).width();
+                let wh = $(window).height();
+
+                $('#wrap, #contents').css({
+                    width: ww, 
+                    height: wh * 4,
+                });
+
+                $('.con').css({
+                    width: ww,
+                    height: wh,
+                    textAlign: 'center',
+                    font: `bold 100px/${wh}px ''`,
+                    backgroundColor: function(index) {
+                        return bg[index];
+                    }
+                });
+
+                $('.menu').click(function() {
+                    let i = $(this).index();
+
+                    $('html, body').animate({
+                        scrollTop: wh * i, 
+                    });
+                });
+
+
+                $(window).scroll(function() {
+                    let sct = $(window).scrollTop();
+
+                    if(sct >= 0 && sct < wh) {
+                        $('.menu').removeClass('active');
+                        $('.menu').eq(0).addClass('active');
+                    } else if(sct >= wh && sct < wh*2) {
+                        $('.menu').removeClass('active');
+                        $('.menu').eq(1).addClass('active');
+                    } else if(sct >= wh*2 && sct < wh*3) {
+                        $('.menu').removeClass('active');
+                        $('.menu').eq(2).addClass('active');
+                    } else if(sct >= wh*3) {
+                        $('.menu').removeClass('active');
+                        $('.menu').eq(3).addClass('active');
+                    }
+                });
+
+
+
+
+
+
+
+
+
+
+
+
+            }); //end
+
+
+
+
+        </script>
+    </body>
+</html>
